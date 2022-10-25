@@ -11,8 +11,9 @@ fastify.register(require('fastify-static'), {
   prefix: '/',
 });
 
+const PORT = process.env.PORT || 8000;
 // Run the server!
-fastify.listen(8080, (err, address) => {
+fastify.listen(PORT, (err, address) => {
   if (err) throw err
   fastify.log.info(`🚀 Server listening on ${address}`)
 })
